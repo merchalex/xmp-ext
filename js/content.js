@@ -73,7 +73,7 @@ const checkForActiveRightClickImage=()=>{
 		checkAndDownloadXmp(imageUrl,imageName);
 	}
 }
-let hideList=['pbs.twimg.com','images.squarespace-cdn.com'];
+let hideList=['.cdninstagram.com','images.squarespace-cdn.com'];
 const checkAndHideImage=(src)=>{
   for(let i=0;i<hideList.length;i++) {
     if (src.includes(hideList[i])) {
