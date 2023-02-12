@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Merchello</title>
+	<script type="text/javascript" src="../js/lib/jquery.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="../css/bootstrap-icons.css">
+	<link href="http://fonts.cdnfonts.com/css/inter" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="../css/popup.css">
+	<link rel="stylesheet" type="text/css" href="../css/microtip.css">
+	<link rel="stylesheet" type="text/css" href="../css/microtip.min.css">
+</head>
+
+<body>
+	<div class="main-view" view='login'>
+
+		<div class="row" style="height: 0px;">
+
+
+		</div>
+
+
+		<div class="row form-row logo-w">
+			<img src="../img/logo.png" class="logo-outer">
+
+		</div>
+		<div class="row login-button-row">
+			<a href="https://presetninja.com/login" class="blue-button g-button login-button" target="_blank">Sign in</a>
+		</div>
+		<div class="row pt-20">
+			<span class="plain">No account yet?</span><a href="https://gomerchello.com/sign-up" target="blank" style="margin-bottom: 11px;" class="blue-link">Sign up</a><br>
+		</div>
+
+
+	</div>
+	<div class="main-view" view='home'>
+		<div class="home">
+			<a href="https://docs.presetninja.com/" target="_blank" class="logout sign">
+				<div class="bottom-link s-o"><span class="docu">Sign out</span><i class="bi bi-box-arrow-right"></i></div>
+			</a>
+			<a href="https://docs.presetninja.com/" target="_blank" class="logout docs">
+				<div class="bottom-link"><i class="bi bi-book"></i><span class="docu">Documentation</span></div>
+			</a>
+
+			<!--<div class="row">
+	<div class="menu-logout-wrapper logout-btn log-out-button" id="logout">
+		<span class="bi bi-box-arrow-right dropdown-logout">
+	</div>
+</div> -->
+			<div class="  logo-w setting-top">
+				<img src="../img/logo.png" class="logo-outer logo2">
+
+				<label class="toggle on-off">
+					<span class="toggle-label on-off-label">On/Off</span>
+					<input class="toggle-checkbox io-checkbox" type="checkbox" checked id="on">
+					<div class="toggle-switch io-switch"></div>
+
+				</label>
+			</div>
+			<span class="hidden" id="saved">Saved!</span>
+			<!-- <div class="row fill-tracking" style="padding-top:50px;">
+			<label>ON/Off</label>
+			<label class="switch fbfee-switch" name="percent" style="margin-top:50px">
+				<input type="checkbox" checked="true" id="on"> <span class="slider round"></span>
+			</label>
+		</div>
+		<div class="row fill-tracking">
+			<label>Rightclick</label>
+			<label class="switch fbfee-switch" name="percent">
+				<input type="checkbox" checked="true" id="right-click"> <span class="slider round"></span>
+			</label>
+		</div> -->
+
+
+			<div class="settings">
+				<hr>
+				<label class="toggle">
+					<span class="toggle-label">Right-click override<span class="outer" data-tooltip="Some websites will add some code to stop you from right-clicking at all--this setting will (almost always) override this and allow you to right-click. --
+
+							Note: It is sometimes necessary to also hold down Shift while you right click." data-flow="bottom"><i class="bi bi-question-circle tt"></i></span></span><input class="toggle-checkbox" type="checkbox" checked id="right-click">
+					<div class="toggle-switch"></div>
+
+				</label>
+
+
+
+
+				<hr>
+				<label class="toggle">
+					<span class="toggle-label">Strip nonessential data<span class="outer"
+							data-tooltip="This will remove all settings from your preset that are specific to certain gear and lighting condtions, and generally won't help you (white balance, exposure, lens correction, etc). We recommend leaving this enabled.  "
+							data-flow="bottom"><i class="bi bi-question-circle tt"></i></span> </span><input class="toggle-checkbox" type="checkbox" checked id="junk">
+					<div class="toggle-switch"></div>
+				</label>
+
+				<hr>
+				<label class="toggle">
+					<span class="toggle-label">Overlay fix <span class="tiny">(experimental)</span><span class="outer"
+							data-tooltip="Some websites add transparent overlays on top of images as another way to prevent them from being downloaded. This setting will bypass this in most cases, but can occasionlly do some goofy things to the page."
+							data-flow="top"><i class="bi bi-question-circle tt"></i></span></span><input class="toggle-checkbox" type="checkbox" checked id="style">
+					<div class="toggle-switch"></div>
+				</label>
+
+
+				<div class="go-to-dashboard" style="margin-top:20px;">
+					<button id="enable-css" class="menu-wide-btn dashboard-button button blue-button hidden"><i class="bi bi-braces"></i></i>Enable page styles</button>
+					<button id="disable-css" class="menu-wide-btn dashboard-button button blue-button"><i class="bi bi-braces"></i></i>Disable page styles <span class="smaller"> (CSS)</span></button>
+
+				</div>
+
+
+
+
+
+			</div>
+		</div>
+
+	</div>
+	<div class=" main-view" view='payment'>
+		<div class="row" style="height: 0px;">
+
+
+		</div>
+
+
+		<div class="row form-row logo-w">
+			<img src="../img/logo.png" class="logo-outer">
+
+		</div>
+
+		<div class="row pt-20 pt-21">
+			<span class="plain ug-2">Please upgrade to a Pro membership to use PresetNinja.</span><br>
+		</div>
+
+		<div class=" upgrade-row row">
+			<a class="blue-button g-button g-button-alt" href="https://presetninja.com/pricing" target="_blank"> Upgrade subscription</a>
+		</div>
+	</div>
+	<script type="text/javascript" src="../js/popup.js"></script>
+</body>
+
+</html>
