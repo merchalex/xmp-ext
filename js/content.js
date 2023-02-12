@@ -2,9 +2,9 @@ let data={},cssDisabled=false,interval,timeout;
 const showError=()=>{
 	$("#xmp-ext-error").remove();
 	$('body').prepend(`
-		<div id="xmp-ext-error" style="width:300px;border-radius:10px;text-align:center:height:200px;background:red;position:fixed;z-index:123456789;">
-		  <h1 style="color:white">No xmp found</h1>
-		  <button id="hide-xmp-error">Hide</button>
+		<div id="xmp-ext-error" style="width:200px;border-radius:3px;text-align:center:height:200px;background:red;position:fixed;z-index:123456789;padding: 10px 15px;right: 10px;top: 10px;">
+		  <span class="smaller" style="color:white;font-weight:400;">Unable to download: <br>Missing the required EXIF data.</span>
+		  <button id="hide-xmp-error" style="display: none;">Hide</button>
 		</div>
 	`)
 	if(timeout) clear(timeout);

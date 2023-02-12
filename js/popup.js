@@ -9,7 +9,7 @@ const displaySaved=()=>{
 		$("#saved").hide();
 	},2000)
 }
-const enableDisbaleSetting=()=>{
+const enableDisableSetting=()=>{
 	if(info.on){
 		$(".settings").removeClass('disable')
 	}else{
@@ -18,7 +18,7 @@ const enableDisbaleSetting=()=>{
 }
 $(document).on("change","#on",function(){
 	info.on=$("#on").prop("checked");
-	
+
 	chrome.storage.local.set({xmp:info});
 	chrome.tabs.query({},(tabs)=>{
 			tabs.forEach((tab)=>{
@@ -28,7 +28,7 @@ $(document).on("change","#on",function(){
 		  })
 	})
 	assignCheckboxStyle();
-	enableDisbaleSetting();
+	enableDisableSetting();
 })
 $(document).on("change","#right-click,#junk,#style",function(){
 	info.on=$("#on").prop("checked");
@@ -44,7 +44,7 @@ $(document).on("change","#right-click,#junk,#style",function(){
 			  }
 		    })
 	    })
-	    enableDisbaleSetting();
+	    enableDisableSetting();
 	}
 })
 $(document).on("click","#disable-css",function(){
@@ -82,7 +82,7 @@ window.onload=()=>{
 				info=result.xmp;
 			  $("#on").prop("checked",info.on);
 			  assignCheckboxStyle();
-			  enableDisbaleSetting();
+			  enableDisableSetting();
 			}else{
 				if(!result.xmp.login){
 					displayView("login");
@@ -108,4 +108,3 @@ chrome.tabs.query({active:true,currentWindow:true},function(tabs){
 		});
 	}
 });
-
