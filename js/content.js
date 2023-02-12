@@ -124,7 +124,7 @@ const displayGreenButton=(img)=>{
 	    `)
 	}else{
 		console.log(`icon class is now xmp-ext-${img.css('position') || "nil"}`)
-	    img.closest('div').append(`
+	    img.parents().eq(0).prepend(`
 		   <img id="ext-emp-download" class="xmp-ext-${img.css('position') || "nil"}"  src="${chrome.runtime.getURL("img/green.png")}" style="width:45px;height:45px;position:absolute;z-index:123456789;border-radius:20px;margin-top:10px;left:10px">
 	    `)
 	}
@@ -140,7 +140,7 @@ const displayRedButton=(img)=>{
 	    `)
 	}else{
 		console.log(`icon class is now xmp-ext-${img.css('position') || "nil"}`)
-	    img.closest('div').append(`
+	    img.parents().eq(0).prepend(`
 		   <img id="ext-emp-error" class="xmp-ext-${img.css('position') || "nil"}" src="${chrome.runtime.getURL("img/red.png")}" style="width:45px;height:45px;position:absolute;z-index:123456789;border-radius:20px;margin-top:10px;left:10px">
 	    `)
 	}
