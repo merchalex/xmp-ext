@@ -99,7 +99,7 @@ const displayGreenButton=(img)=>{
 const displayRedButton=(img)=>{
 	$("#ext-emp-download,#ext-emp-error").remove();
 	let left= img.get(0).getBoundingClientRect().left+10,
-        top= img.get(0).getBoundingClientRect().top+30;
+        top= img.get(0).getBoundingClientRect().top+10;
 	$('body').prepend(`
 		<img id="ext-emp-error" src="${chrome.runtime.getURL("img/red.png")}" style="width:45px;height:45px;position:fixed;z-index:123456789;border-radius:20px;margin-top:${top}px;left:${left}px">
 	`)
