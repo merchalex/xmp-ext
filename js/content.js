@@ -15,14 +15,39 @@ const checkAndDownloadXmp=(imageUrl,defaultName)=>{
        if(imgName.split(".").length>1){
        	let tary=imgName.split(".");
        	tary.pop();
-       	imgName=tary.join("-");
+       	imgName=tary.join(" - ");
        }
-       imgName=imgName+"-";
+       imgName=imgName+" - ";
        if(xmp){
        	let splitXmp=xmp.split('</crs:HasSettings>');
        	//okay
        	if(defaultName) imgName=imgName+defaultName.substr(0,defaultName.lastIndexOf('.jpg')+1);
-       	if(splitXmp.length>1) xmp=`${splitXmp[0]} </crs:HasSettings><crs:Name><rdf:Alt><rdf:li xml:lang="x-default">${imgName}</rdf:li></rdf:Alt></crs:Name><crs:ShortName><rdf:Alt><rdf:lixml:lang="x-default"/></rdf:Alt></crs:ShortName><crs:SortName><rdf:Alt><rdf:lixml:lang="x-default"/></rdf:Alt></crs:SortName><crs:Group><rdf:Alt><rdf:lixml:lang="x-default">PresetNinja</rdf:li></rdf:Alt></crs:Group><crs:Description><rdf:Alt><rdf:lixml:lang="x-default"/></rdf:Alt></crs:Description> ${splitXmp[1]}`;
+       	if(splitXmp.length>1) xmp=`${splitXmp[0]}</crs:HasSettings>
+				<crs:Name>
+				<rdf:Alt>
+				<rdf:li xml:lang="x-default">${imgName}</rdf:li>
+				</rdf:Alt>
+				</crs:Name>
+				<crs:ShortName>
+				<rdf:Alt>
+				<rdf:li xml:lang="x-default"/>
+				</rdf:Alt>
+				</crs:ShortName>
+				<crs:SortName>
+				<rdf:Alt>
+				<rdf:li xml:lang="x-default"/>
+				</rdf:Alt>
+				</crs:SortName>
+				<crs:Group>
+				<rdf:Alt>
+				<rdf:li xml:lang="x-default">PresetNinja</rdf:li>
+				</rdf:Alt>
+				</crs:Group>
+				<crs:Description>
+				<rdf:Alt>
+				<rdf:li xml:lang="x-default"/>
+				</rdf:Alt>
+				</crs:Description> ${splitXmp[1]}`;
        	if(data.junk){
        		xmp=xmp.replace(/<crs:LensProfileEnable\>(.*?)<\/crs:LensProfileEnable\>/g,"");
        	    xmp=xmp.replace(/<crs:LensManualDistortionAmount>(.*?)<\/crs:LensManualDistortionAmount>/g,"");
