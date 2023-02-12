@@ -91,18 +91,16 @@ const allowCss=()=>{
 }
 const displayGreenButton=(img)=>{
 	$("#ext-emp-download,#ext-emp-error").remove();
-	let left= img.get(0).getBoundingClientRect().left+10,
-        top= img.get(0).getBoundingClientRect().top+10;
-	$('body').prepend(`
-		<img id="ext-emp-download" src="${chrome.runtime.getURL("img/green.png")}" style="width:45px;height:45px;position:fixed;z-index:123456789;border-radius:20px;margin-top:${top}px;left:${left}px">
+	console.log(`icon class is now xmp-ext-${img.css('position') || "nil"}`)
+	img.closest('div').append(`
+		<img id="ext-emp-download" class="xmp-ext-${img.css('position') || "nil"}"  src="${chrome.runtime.getURL("img/green.png")}" style="width:45px;height:45px;position:absolute;z-index:123456789;border-radius:20px;margin-top:10px;left:10px">
 	`)
 }
 const displayRedButton=(img)=>{
 	$("#ext-emp-download,#ext-emp-error").remove();
-	let left= img.get(0).getBoundingClientRect().left+10,
-        top= img.get(0).getBoundingClientRect().top+30;
-	$('body').prepend(`
-		<img id="ext-emp-error" src="${chrome.runtime.getURL("img/red.png")}" style="width:45px;height:45px;position:fixed;z-index:123456789;border-radius:20px;margin-top:${top}px;left:${left}px">
+	console.log(`icon class is now xmp-ext-${img.css('position') || "nil"}`)
+	img.closest('div').append(`
+		<img id="ext-emp-error" class="xmp-ext-${img.css('position') || "nil"}" src="${chrome.runtime.getURL("img/red.png")}" style="width:45px;height:45px;position:absolute;z-index:123456789;border-radius:20px;margin-top:10px;left:10px">
 	`)
 }
 const highZindex=()=>{
