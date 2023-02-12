@@ -73,6 +73,15 @@ const checkForActiveRightClickImage=()=>{
 		checkAndDownloadXmp(imageUrl,imageName);
 	}
 }
+let hideList=['pbs.twimg.com','images.squarespace-cdn.com'];
+const checkAndHideImage=(src)=>{
+  for(let i=0;i<hideList.length;i++) {
+    if (src.includes(hideList[i])) {
+      return true;
+    }
+  }
+  return false;
+}
 const unlinkCss=()=>{
 	cssDisabled=true;
 	let sheets=document.styleSheets;
@@ -80,6 +89,12 @@ const unlinkCss=()=>{
         let sheet=sheets[i];
         if(sheet) sheet.disabled=cssDisabled;
     }
+    $('img').each(function(){
+    	let src=$(this).attr("src");
+    	//console.log([src, checkAndHideImage(src)])
+    	if(src && checkAndHideImage(src)) $(this).addClass('xmp-tobe-hide');
+    })
+    $('head').append(`<style xmp-style>.xmp-tobe-hide{display:none!important;}</style>`)
 }
 const allowCss=()=>{
 	cssDisabled=false;
@@ -88,6 +103,8 @@ const allowCss=()=>{
     	let sheet=sheets[i];
         if(sheet) sheet.disabled=cssDisabled;
     }
+    $(".xmp-tobe-hide").removeClass('xmp-tobe-hide');
+    $(`style[xmp-style]`).remove();
 }
 const displayGreenButton=(img)=>{
 	$("#ext-emp-download,#ext-emp-error").remove();
@@ -123,7 +140,7 @@ $(document).on("mouseover","img",function(){
 	    img=$(this),
 	    imgWidth=img.width(),
 	    imgHeight=img.height();
-	if(data.on && src && src.indexOf(".svg")==-1 && imgWidth>320 && imgHeight>220){
+	if(data.on && src && src.indexOf(".svg")==-1 && imgWidth>100 && imgHeight>100){
 		if($(this).attr("ext-xmp")){
 			if($(this).attr("ext-xmp")=="yes"){
 				displayGreenButton(img);
