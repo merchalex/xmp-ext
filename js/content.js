@@ -125,7 +125,7 @@ $(document).on("mouseover","img",function(){
 	    img=$(this),
 	    imgWidth=img.width(),
 	    imgHeight=img.height();
-	if(data.on && src && src.indexOf(".svg")==-1 && imgWidth>100 && imgHeight>100){
+	if(data.on && src && src.indexOf(".svg")==-1 && imgWidth>320 && imgHeight>220){
 		if($(this).attr("ext-xmp")){
 			if($(this).attr("ext-xmp")=="yes"){
 				displayGreenButton(img);
