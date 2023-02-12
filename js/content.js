@@ -22,6 +22,7 @@ const checkAndDownloadXmp=(imageUrl,defaultName)=>{
        	let splitXmp=xmp.split('</crs:HasSettings>');
        	//okay
        	if(defaultName) imgName=imgName+defaultName.substr(0,defaultName.lastIndexOf('.jpg')+1);
+       	if(imgName.charAt(imgName.length-1)=='.') imgName = imgName.substring(0,imgName.length-1)
        	if(splitXmp.length>1) xmp=`${splitXmp[0]}</crs:HasSettings>
 				<crs:Name>
 				<rdf:Alt>
